@@ -68,7 +68,8 @@ jobs:
               echo DB_HOST=${{ secrets.DB_HOST }} >> .env
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
               sudo docker pull toksi86/api_yamdb:latest
-              sudo docker-compose up -d 
+              sudo docker-compose up -d
+              sudo docker run --rm -d -p 5000:5000 toksi86/api_yamdb
   
   send_message:
     runs-on: ubuntu-latest
