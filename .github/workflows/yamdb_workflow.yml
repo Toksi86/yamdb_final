@@ -5,13 +5,12 @@ on: [push]
 jobs:
   tests:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: 3.9
 
     - name: Install dependencies
       run: | 
@@ -44,6 +43,7 @@ jobs:
         with:
           push: true
           tags: toksi86/api_yamdb:latest
+          file: Dockerfile
   
   deploy:
       runs-on: ubuntu-latest
