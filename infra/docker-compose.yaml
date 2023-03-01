@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    image: toksi86/api_yamdb:latest
+    image: toksi86/api_yamdb:v1
     restart: always
     volumes:
       - static_value:/app/static/
