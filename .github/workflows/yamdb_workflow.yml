@@ -25,6 +25,7 @@ jobs:
         python manage.py test
   
   build_and_push_to_docker_hub:
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     needs: tests
@@ -57,7 +58,6 @@ jobs:
             key: ${{ secrets.SSH_KEY }}
             passphrase: ${{ secrets.PASSPHRASE }}
             script: |
-              sudo docker pull toksi86/api_yamdb:latest
               sudo docker-compose stop
               sudo docker-compose rm web
               touch .env
@@ -67,6 +67,7 @@ jobs:
               echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
               echo DB_HOST=${{ secrets.DB_HOST }} >> .env
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+              sudo docker pull toksi86/api_yamdb:latest
               sudo docker-compose up -d 
   
   send_message:
