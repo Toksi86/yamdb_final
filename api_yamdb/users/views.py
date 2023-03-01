@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .serializers import RegistrationSerializer, GetTokenSerializer
+from .serializers import GetTokenSerializer, RegistrationSerializer
 
 User = get_user_model()
 

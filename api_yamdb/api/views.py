@@ -1,32 +1,22 @@
+from api.permissions import (IsAdmin, IsAdminOrReadOnly,
+                             IsAuthorModeratorAdminOrReadOnly)
 from django.contrib.auth import get_user_model
 from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, viewsets
 from rest_framework.decorators import action
 from rest_framework.generics import get_object_or_404
-from rest_framework.permissions import (
-    IsAuthenticatedOrReadOnly,
-    IsAuthenticated
-)
+from rest_framework.permissions import (IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
+from reviews.models import Category, Comments, Genre, Review, Title
 
-from api.permissions import (
-    IsAdminOrReadOnly,
-    IsAdmin,
-    IsAuthorModeratorAdminOrReadOnly
-)
-from reviews.models import Title, Review, Comments, Category, Genre
-from .serializers import (
-    ReviewSerializer,
-    CommentsSerializer,
-    CategorySerializer,
-    TitleSerializer,
-    GenreSerializer,
-    UserSerializer,
-)
 from .filters import TitleFilter
-from .pagination import PagePagination
 from .mixins import MyCustomBaseViewSet
+from .pagination import PagePagination
+from .serializers import (CategorySerializer, CommentsSerializer,
+                          GenreSerializer, ReviewSerializer, TitleSerializer,
+                          UserSerializer)
 
 User = get_user_model()
 

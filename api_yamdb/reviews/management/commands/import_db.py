@@ -3,9 +3,9 @@ import os
 
 from django.contrib.auth import get_user_model
 from django.core.management import BaseCommand
+from reviews.models import Category, Comments, Genre, Review, Title
 
 from api_yamdb.settings import BASE_DIR
-from reviews.models import Category, Comments, Genre, Review, Title
 
 User = get_user_model()
 

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import RegistrationAPIView, GetTokenAPIView
+from .views import GetTokenAPIView, RegistrationAPIView
 
 namespace = 'users'
 
