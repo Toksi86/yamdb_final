@@ -66,3 +66,7 @@ class RegistrationAPIView(APIView):
             to=[data['to_email']]
         )
         email.send()
+
+
+def test_view():
+    pass
