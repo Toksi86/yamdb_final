@@ -69,4 +69,5 @@ class RegistrationAPIView(APIView):
 
 
 def test_view():
+    print()
     pass
