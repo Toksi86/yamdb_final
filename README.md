@@ -14,6 +14,8 @@
 
 ![workflow](https://github.com/Toksi86/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+IP для проверки: http://51.250.33.155/redoc
+
 ## Технологии в проекте
 - asgiref==3.2.10
 - Django==2.2.16
