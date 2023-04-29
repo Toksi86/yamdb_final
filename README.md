@@ -12,8 +12,6 @@
 Пользователи могут оставлять комментарии под отзывами.
 Произведения может относить к разным жанрам.
 
-![workflow](https://github.com/Toksi86/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
-
 ## Технологии в проекте
 - asgiref==3.2.10
 - Django==2.2.16
